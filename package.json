@@ -1,0 +1,16 @@
+{
+  "name": "ccgen",
+  "version": "1.0.0",
+  "description": "Tool that tries to generate a valid credit card number",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "type": "module",
+  "author": "zAlweNy26",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^8.3.0",
+    "node-fetch": "^3.1.0"
+  }
+}
