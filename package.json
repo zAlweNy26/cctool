@@ -1,5 +1,5 @@
 {
-  "name": "ccgen",
+  "name": "cctool",
   "version": "1.0.0",
   "description": "Tool that tries to generate a valid credit card number",
   "main": "index.js",
