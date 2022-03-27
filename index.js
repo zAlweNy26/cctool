@@ -5,7 +5,7 @@ import { Transform } from "stream"
 const pjson = JSON.parse(fs.readFileSync("package.json"))
 
 const CreditCard = {
-    Visa: [[40000, 499999], [402600, 402699], [417500, 417599], [450800, 450899], [4844, 484499], [4913, 491399], [4917, 491799]],
+    Visa: [[40000, 499999], [402600, 402699], [417500, 417599], [450800, 450899], [484400, 484499], [491300, 491399], [491700, 491799]],
     MasterCard: [[222100, 272099], [510000, 559999]]
 }
 
@@ -120,14 +120,12 @@ function generateCreditCard(amount, type) {
 }
 
 function getLuhnDigit(num) {
-    let sum = 0
-    for (let i = num.length - 1; i >= 0; i--) {
-        let digit = parseInt(num[i])
-        if (num.length % 2 && (i + 1) % 2) digit *= 2
-        if (digit > 9) digit -= 9
-        sum += digit
+    let sum = 0, digit = 0, len = num.length, even = false
+    while (len--) {
+      digit = Number(num[len])
+      sum += (even = !even) ? digit * 2 : digit
     }
-    return ((10 - (sum % 10)) % 10).toString()
+    return (sum * 9) % 10
 }
 
 function getRandomNumber(min, max) {

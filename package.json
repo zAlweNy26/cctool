@@ -1,6 +1,6 @@
 {
   "name": "cctool",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tool that tries to generate a valid credit card number",
   "main": "index.js",
   "scripts": {
