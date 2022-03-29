@@ -39,7 +39,9 @@ function convertToInteger(value) {
     return parsedValue
 }
 
-const program = new Command().configureOutput({ outputError: (str, write) => write(`\x1b[31m${str}\x1b[0m`) })
+const program = new Command()
+    .version(`v${pjson.version} by zAlweNy26`, '-v, --version', 'Output the current version of the program')
+    .configureOutput({ outputError: (str, write) => write(`\x1b[31m${str}\x1b[0m`) })
     
 program.command("check <number>")
     .description("Check if the credit card number is valid using the luhn algorithm")
